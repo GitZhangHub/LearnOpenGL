@@ -1,8 +1,0 @@
-/home/apple/workspace/OpenGL/include/GLFW/glfw3native.h
-/home/apple/workspace/OpenGL/include/GLFW/glfw3.h
-/home/apple/workspace/OpenGL/lib/cmake/glfw3/glfw3Config.cmake
-/home/apple/workspace/OpenGL/lib/cmake/glfw3/glfw3ConfigVersion.cmake
-/home/apple/workspace/OpenGL/lib/cmake/glfw3/glfw3Targets.cmake
-/home/apple/workspace/OpenGL/lib/cmake/glfw3/glfw3Targets-debug.cmake
-/home/apple/workspace/OpenGL/lib/pkgconfig/glfw3.pc
-/home/apple/workspace/OpenGL/lib/libglfw3d.a
