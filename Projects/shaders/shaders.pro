@@ -2,12 +2,10 @@ QMAKE_CXXFLAGS += -std=c++11
 TEMPLATE = app
 #CONFIG   += plugin
 #CONFIG +=staticlib
-
-#        if(!contains(DEFINES,GEOVIS_LIBRARY_STATIC)){
+#        if(!contains(DEFINES,LIBRARY_STATIC)){
 #        }
 INCLUDEPATH += \
     += $$(OPENGLDIR)/include
-
 
 
 
@@ -19,16 +17,20 @@ CONFIG(debug, debug|release){
 }
 
 win32{
-CONFIG(release, debug|release){
-
-}
+    DESTDIR = $$(OPENGLDIR)/bin
 CONFIG(debug, debug|release){
+    LIBS += -L$$(OPENGLDIR)/lib  -lglfw3dlld
 
 }
+    CONFIG(release, debug|release){
+    LIBS += -L$$(OPENGLDIR)/lib/  -lglfw3dll
+
+}
+
 }
 
 unix{
-    DESTDIR = $$(OPENGLDIR)/shaders/bin
+    DESTDIR = $$(OPENGLDIR)/bin
     CONFIG(debug, debug|release){
         LIBS += -L$$(OPENGLDIR)/lib -lglfw3d
         LIBS += -lX11  -lXcursor -lXrandr -lXinerama -lXxf86vm -ldl

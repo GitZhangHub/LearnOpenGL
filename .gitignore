@@ -7,4 +7,4 @@
 *.exp
 *.ilk
 Makefile
-
+*.obj
