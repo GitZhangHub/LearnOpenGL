@@ -1,9 +1,6 @@
 QMAKE_CXXFLAGS += -std=c++11
 TEMPLATE = app
-#CONFIG   += plugin
-#CONFIG +=staticlib
-#        if(!contains(DEFINES,GEOVIS_LIBRARY_STATIC)){
-#        }
+
 INCLUDEPATH += \
     += $$(OPENGLDIR)/include
 
@@ -11,10 +8,10 @@ INCLUDEPATH += \
 
 
 CONFIG(release, debug|release){
-    TARGET = textures
+    TARGET = Transformations
 }
 CONFIG(debug, debug|release){
-    TARGET = texturesd
+    TARGET = Transformationsd
 }
 
 win32{
@@ -31,6 +28,8 @@ unix{
     CONFIG(debug, debug|release){
         LIBS += -L$$(OPENGLDIR)/lib -lglfw3d
         LIBS += -lX11  -lXcursor -lXrandr -lXinerama -lXxf86vm -ldl
+
+
     }
 
     CONFIG(release, debug|release){
@@ -46,11 +45,11 @@ unix{
 SOURCES += \
     ./main.cpp \
     ../../../src/glad.c \
-#    stb_image.cpp
+
 
 
 HEADERS +=\
-    ../../../include/GLFW/glfw3.h \
-    ../../../include/glad/glad.h \
-    ../../../include/learnopengl/shader_s.h \
-    ../../../include/stb_image.h
+    ../../include/GLFW/glfw3.h \
+    ../../include/glad/glad.h \
+    ../../include/learnopengl/shader_s.h \
+    ../../include/stb_image.h
