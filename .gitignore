@@ -1,0 +1,10 @@
+#
+
+*.pro.user
+*.o
+*.exe
+*.pdb
+*.exp
+*.ilk
+Makefile
+*.obj
