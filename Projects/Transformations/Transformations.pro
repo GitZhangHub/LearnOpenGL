@@ -15,11 +15,13 @@ CONFIG(debug, debug|release){
 }
 
 win32{
-CONFIG(release, debug|release){
+    DESTDIR = $$(OPENGLDIR)/bin
+CONFIG(debug, debug|release){
+    LIBS += -L$$(OPENGLDIR)/lib  -lglfw3dlld
 
 }
-CONFIG(debug, debug|release){
-
+    CONFIG(release, debug|release){
+    LIBS += -L$$(OPENGLDIR)/lib/  -lglfw3dll
 }
 }
 
@@ -43,8 +45,9 @@ unix{
 
 
 SOURCES += \
-    ./main.cpp \
     ../../../src/glad.c \
+    1.7Transformations.cpp
+
 
 
 

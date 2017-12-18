@@ -4,6 +4,7 @@ TEMPLATE = app
 #CONFIG +=staticlib
 #        if(!contains(DEFINES,GEOVIS_LIBRARY_STATIC)){
 #        }
+
 INCLUDEPATH += \
     += $$(OPENGLDIR)/include
 
@@ -11,10 +12,10 @@ INCLUDEPATH += \
 
 
 CONFIG(release, debug|release){
-    TARGET = textures
+    TARGET = HelloTrangle
 }
 CONFIG(debug, debug|release){
-    TARGET = texturesd
+    TARGET = HelloTrangled
 }
 
 win32{
@@ -25,8 +26,9 @@ CONFIG(debug, debug|release){
 }
     CONFIG(release, debug|release){
     LIBS += -L$$(OPENGLDIR)/lib/  -lglfw3dll
-
 }
+}
+
 
 unix{
     DESTDIR = $$(OPENGLDIR)/bin
@@ -47,11 +49,10 @@ unix{
 
 SOURCES += \
     ./main.cpp \
-    ../../../src/glad.c \
-#    stb_image.cpp
+    ../../../src/glad.c
 
 
-HEADERS +=\
+HEADERS += \
     ../../../include/GLFW/glfw3.h \
     ../../../include/glad/glad.h \
     ../../../include/learnopengl/shader_s.h \
