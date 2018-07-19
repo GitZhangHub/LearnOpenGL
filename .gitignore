@@ -8,3 +8,4 @@
 *.ilk
 Makefile
 *.obj
+*DS_Store
