@@ -1,9 +1,9 @@
 QMAKE_CXXFLAGS += -std=c++11
 TEMPLATE = app
+QMAKE_MAC_SDK = macosx10.14
 
-
-
-
+# for stb_image ： this  can be defined only once.
+#DEFINES +=  STB_IMAGE_IMPLEMENTATION
 
 CONFIG(release, debug|release){
         PREFLAG=release
@@ -26,7 +26,7 @@ win32{
 
 
 
-        LIBS += -L../lib -lgtest -lglfw
+
 
 INCLUDEPATH += \
         ../include
@@ -35,11 +35,16 @@ SOURCES += \
     ../src/main.cpp \
     ../src/gtest_all.cpp \
     ../src/glad.c \
-    ../src/triangle.cpp \
+    ../src/commonapi.cpp \
     ../src/01hellowindow.cpp \
-    ../src/commonapi.cpp
+   ../src/02helloTriangle.cpp \
+    ../src/03shaders.cpp \
+    ../src/04textures.cpp \
+    ../src/05translation.cpp \
+    ../src/06coordinatesystems.cpp \
+    ../src/07camera.cpp
 
-
+#    ../src/otherTest.cpp \
 HEADERS += \
     ../include/GLFW/glfw3.h \
     ../include/glad/glad.h \
@@ -47,3 +52,6 @@ HEADERS += \
     ../include/stb_image.h \
     ../include/gtest/gtest.h \
     ../include/learnopengl/OpenGL330AP.h
+#    ../include/learnopengl/stbimage.h
+
+LIBS += -L../lib -lgtest -lglfw

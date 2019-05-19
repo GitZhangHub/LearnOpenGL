@@ -11,9 +11,11 @@
 class Shader
 {
 public:
+
+    //程序iD
     unsigned int ID;
-    // constructor generates the shader on the fly
-    // ------------------------------------------------------------------------
+
+    // 构造器读取并构建着色器 args:顶点着色器路径、片段着色器路径
     Shader(const char* vertexPath, const char* fragmentPath)
     {
         // 1. retrieve the vertex/fragment source code from filePath
@@ -21,19 +23,20 @@ public:
         std::string fragmentCode;
         std::ifstream vShaderFile;
         std::ifstream fShaderFile;
-        // ensure ifstream objects can throw exceptions:
+        // ensure ifstream objects can throw exceptions:保证ifstream 对象可以抛出异常
         vShaderFile.exceptions (std::ifstream::failbit | std::ifstream::badbit);
         fShaderFile.exceptions (std::ifstream::failbit | std::ifstream::badbit);
         try
         {
-            // open files
+            // open file 打开文件
             vShaderFile.open(vertexPath);
             fShaderFile.open(fragmentPath);
             std::stringstream vShaderStream, fShaderStream;
             // read file's buffer contents into streams
-            vShaderStream << vShaderFile.rdbuf();
+            // 读取文件的缓冲内容到数据流中
+            vShaderStream << vShaderFile.rdbuf();//一次性读取全部内容
             fShaderStream << fShaderFile.rdbuf();
-            // close file handlers
+            // close file handlers 关闭文件处理器
             vShaderFile.close();
             fShaderFile.close();
             // convert stream into string
@@ -60,7 +63,7 @@ public:
         glShaderSource(fragment, 1, &fShaderCode, NULL);
         glCompileShader(fragment);
         checkCompileErrors(fragment, "FRAGMENT");
-        // shader Program
+        // shader Program着色器程序
         ID = glCreateProgram();
         glAttachShader(ID, vertex);
         glAttachShader(ID, fragment);
@@ -70,13 +73,13 @@ public:
         glDeleteShader(vertex);
         glDeleteShader(fragment);
     }
-    // activate the shader
+    // activate the shader 使用/激活程序
     // ------------------------------------------------------------------------
     void use()
     {
         glUseProgram(ID);
     }
-    // utility uniform functions
+    // utility uniform functions uniform工具函数
     // ------------------------------------------------------------------------
     void setBool(const std::string &name, bool value) const
     {

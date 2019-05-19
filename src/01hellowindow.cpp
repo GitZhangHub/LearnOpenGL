@@ -1,6 +1,5 @@
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
-#include "learnopengl/OpenGL330AP.h"
 #include <iostream>
 
 extern void processInput(GLFWwindow *window);
