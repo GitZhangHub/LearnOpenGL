@@ -1,0 +1,1 @@
+/usr/bin/c++    -rdynamic CMakeFiles/shaders.dir/shaders.cpp.o  -o bin/shaders  -L/home/holo/testspace/LearnOpenGL/lib/ubuntu18.04 -Wl,-rpath,/home/holo/testspace/LearnOpenGL/lib/ubuntu18.04 -lglfw3 -lglad_GL -lGL -lXinerama -lXxf86vm -lX11 -lXcursor -lXrandr -lXi -lpthread -ldl 

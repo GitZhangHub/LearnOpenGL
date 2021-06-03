@@ -1,0 +1,1 @@
+/usr/bin/c++    -rdynamic CMakeFiles/baseLighting.dir/baseLighting.cpp.o  -o bin/baseLighting  -L/home/holo/testspace/LearnOpenGL/lib/ubuntu18.04 -Wl,-rpath,/home/holo/testspace/LearnOpenGL/lib/ubuntu18.04 -lglfw3 -lglad_GL -lGL -lXinerama -lXxf86vm -lX11 -lXcursor -lXrandr -lXi -lpthread -ldl 

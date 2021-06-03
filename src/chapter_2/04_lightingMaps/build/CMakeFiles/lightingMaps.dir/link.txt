@@ -1,0 +1,1 @@
+/usr/bin/c++    -rdynamic CMakeFiles/lightingMaps.dir/lightingMaps.cpp.o  -o bin/lightingMaps  -L/home/holo/testspace/LearnOpenGL/lib/ubuntu18.04 -Wl,-rpath,/home/holo/testspace/LearnOpenGL/lib/ubuntu18.04 -lglfw3 -lglad_GL -lGL -lXinerama -lXxf86vm -lX11 -lXcursor -lXrandr -lXi -lpthread -ldl 

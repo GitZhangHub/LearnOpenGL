@@ -1,6 +1,6 @@
 QMAKE_CXXFLAGS += -std=c++11
 TEMPLATE = app
-QMAKE_MAC_SDK = macosx10.14
+#QMAKE_MAC_SDK = macosx10.14
 
 # for stb_image ： this  can be defined only once.
 #DEFINES +=  STB_IMAGE_IMPLEMENTATION

@@ -1,0 +1,1 @@
+/usr/bin/cc -fPIC   -shared -Wl,-soname,libglad_GL.so -o libglad_GL.so CMakeFiles/glad_GL.dir/glad.c.o  -L/home/holo/testspace/LearnOpenGL/lib/ubuntu18.04 
