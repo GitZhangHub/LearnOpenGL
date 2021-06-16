@@ -6,6 +6,8 @@
 #include<vector>
 #include<utility>
 #include<unordered_map>
+
+
 int helloWindow();
 
 int triangle();
@@ -15,12 +17,21 @@ int textures();
 bool translation();
 int coordinateSystems();
 int camera();
+namespace CHAPTER0_CAMERAMA {
+int camera2();
+};
+namespace  CHAPTER1_LIGHT {
+int light();
+}
+namespace CHAPTER3_GEOMETRYSHADER {
+int ball();
+}
 
-//check Endian
-extern int bigOrLittle();
-extern int bigOrLittle2();
-int minPathSum(int (*array)[4],int row,int column);
-int minPathSum2(int* pArray,int row,int column);
+int light();
+
+
+
+
 
 
 

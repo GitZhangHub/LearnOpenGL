@@ -3,8 +3,18 @@
 #include <learnopengl/shader_s.h>
 #include <iostream>
 #include <cmath>
-extern void processInput(GLFWwindow *window);
-extern void framebuffer_size_callback(GLFWwindow* window, int width, int height);
+
+
+void processInput(GLFWwindow *window)
+{
+    if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS)
+        glfwSetWindowShouldClose(window, true);
+}
+
+void framebuffer_size_callback(GLFWwindow* window, int width, int height)
+{
+    glViewport(0, 0, width, height);
+}
 //namespace  ShadersSpace {
 // settings
 const unsigned int SCR_WIDTH = 800;
@@ -14,7 +24,7 @@ const unsigned int SCR_HEIGHT = 600;
 
 
 
-int shaders()
+int main()
 {
 
     // glfw: initialize and configure
@@ -50,7 +60,7 @@ int shaders()
 
 
     //build and compile our shader program
-    Shader ourShader("../../../../data/shaders/03shader.vs","/Users/apple/workspace/LearnOpenGL/data/shaders/03shader.fs");
+    Shader ourShader("../data/shaders/03shader.vs","/Users/apple/workspace/LearnOpenGL/data/shaders/03shader.fs");
 
     // set up vertex data (and buffer(s)) and configure vertex attributes
 

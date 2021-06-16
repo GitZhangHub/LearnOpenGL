@@ -3,8 +3,16 @@
 
 #include <iostream>
 
-extern void processInput(GLFWwindow *window);
-extern void framebuffer_size_callback(GLFWwindow* window, int width, int height);
+void processInput(GLFWwindow *window)
+{
+    if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS)
+        glfwSetWindowShouldClose(window, true);
+}
+
+void framebuffer_size_callback(GLFWwindow* window, int width, int height)
+{
+    glViewport(0, 0, width, height);
+}
 
 // settings
 const unsigned int SCR_WIDTH = 800;
@@ -24,7 +32,7 @@ const char *fragmentShaderSource = "#version 330 core\n"
     "}\n\0";
 
 
-int triangle()
+int main1()
 {
 
     // glfw: initialize and configure
@@ -190,7 +198,7 @@ int triangle()
 }
 
 
-int triangle_with_EBO()
+int main()
 {
     // glfw: initialize and configure
     // ------------------------------

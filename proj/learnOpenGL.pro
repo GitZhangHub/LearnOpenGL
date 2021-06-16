@@ -42,16 +42,18 @@ SOURCES += \
     ../src/04textures.cpp \
     ../src/05translation.cpp \
     ../src/06coordinatesystems.cpp \
-    ../src/07camera.cpp
+    ../src/07camera.cpp \
+    ../src/07_2camera.cpp \
+    ../src/1_1_light.cpp \
+    ../src/3_9GeometryShader.cpp
 
-#    ../src/otherTest.cpp \
 HEADERS += \
     ../include/GLFW/glfw3.h \
     ../include/glad/glad.h \
     ../include/learnopengl/shader_s.h \
     ../include/stb_image.h \
     ../include/gtest/gtest.h \
-    ../include/learnopengl/OpenGL330AP.h
-#    ../include/learnopengl/stbimage.h
+    ../include/learnopengl/OpenGL330AP.h \
+    ../include/learnopengl/camera.h
 
 LIBS += -L../lib -lgtest -lglfw

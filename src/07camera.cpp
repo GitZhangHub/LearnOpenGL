@@ -9,7 +9,7 @@
 #include<glm/gtc/matrix_transform.hpp>
 #include<glm/gtc/type_ptr.hpp>
 
-#define __2D__
+//#define __2D__
 
 extern void processInput(GLFWwindow *window);
 extern void processInput(GLFWwindow *window,

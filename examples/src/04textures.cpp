@@ -5,8 +5,18 @@
 
 #define STB_IMAGE_IMPLEMENTATION
 #include <stb_image.h>
-extern void processInput(GLFWwindow *window);
-extern void framebuffer_size_callback(GLFWwindow* window, int width, int height);
+
+
+void processInput(GLFWwindow *window)
+{
+    if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS)
+        glfwSetWindowShouldClose(window, true);
+}
+
+void framebuffer_size_callback(GLFWwindow* window, int width, int height)
+{
+    glViewport(0, 0, width, height);
+}
 // settings
 const unsigned int SCR_WIDTH = 800;
 const unsigned int SCR_HEIGHT = 600;
@@ -15,7 +25,7 @@ const unsigned int SCR_HEIGHT = 600;
 
 
 
-int textures()
+int main()
 {
 
     // glfw: initialize and configure
@@ -51,7 +61,7 @@ int textures()
 
 
     //build and compile our shader program
-    Shader ourShader("../../../../data/shaders/04texture.vs","/Users/apple/workspace/LearnOpenGL/data/shaders/04texture.fs");
+    Shader ourShader("../data/shaders/04texture.vs","/Users/apple/workspace/LearnOpenGL/data/shaders/04texture.fs");
 
     // set up vertex data (and buffer(s)) and configure vertex attributes
 
@@ -126,7 +136,7 @@ int textures()
     // tell stb_image.h to flip loaded texture's on the y-axis. 反转Y轴
     stbi_set_flip_vertically_on_load(true);
 
-    unsigned char* data= stbi_load("../../../../data/image/container.jpg",&width,&height,&nrChannels,0);
+    unsigned char* data= stbi_load("../data/image/container.jpg",&width,&height,&nrChannels,0);
 
     if(data)
     {
@@ -153,7 +163,7 @@ int textures()
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
     // load image, create texture and generate mipmaps
-    data = stbi_load("../../../../data/image/awesomeface.png", &width, &height, &nrChannels, 0);
+    data = stbi_load("../data/image/awesomeface.png", &width, &height, &nrChannels, 0);
     if (data)
     {
         // note that the awesomeface.png has transparency and thus an alpha channel, so make sure to tell OpenGL the data type is of GL_RGBA

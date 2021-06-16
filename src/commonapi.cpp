@@ -1,9 +1,10 @@
-#ifndef COMMONAPI_H
-#define COMMONAPI_H
+//#ifndef COMMONAPI_H
+//#define COMMONAPI_H
 #include <GLFW/glfw3.h>
 #include <glm/glm.hpp>
 #include<glm/gtc/matrix_transform.hpp>
 #include<glm/gtc/type_ptr.hpp>
+
 void processInput(GLFWwindow *window)
 {
     if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS)
@@ -16,19 +17,19 @@ void processInput(GLFWwindow *window,glm::vec3& cameraPos,glm::vec3& cameraFront
     float cameraSpeed = 0.05f; // adjust accordingly
     if (glfwGetKey(window, GLFW_KEY_W) == GLFW_PRESS)
     {
-        cameraPos += cameraSpeed * cameraFront;
+        cameraPos -= cameraSpeed * cameraFront;
 
     }
 
     if (glfwGetKey(window, GLFW_KEY_S) == GLFW_PRESS)
     {
-        cameraPos -= cameraSpeed * cameraFront;
+        cameraPos += cameraSpeed * cameraFront;
 
 
     }
     if (glfwGetKey(window, GLFW_KEY_A) == GLFW_PRESS)
     {
-        cameraPos -= glm::normalize(glm::cross(cameraFront, cameraUp)) * cameraSpeed;
+        cameraPos += glm::normalize(glm::cross(cameraFront, cameraUp)) * cameraSpeed;
 //        if(cameraPos[0] <0.0f)
 //            cameraPos[0]=0.0f;
     }
@@ -36,7 +37,7 @@ void processInput(GLFWwindow *window,glm::vec3& cameraPos,glm::vec3& cameraFront
 
     if (glfwGetKey(window, GLFW_KEY_D) == GLFW_PRESS)
     {
-        cameraPos += glm::normalize(glm::cross(cameraFront, cameraUp)) * cameraSpeed;
+        cameraPos -= glm::normalize(glm::cross(cameraFront, cameraUp)) * cameraSpeed;
     }
 
 }
@@ -53,9 +54,4 @@ void framebuffer_size_callback(GLFWwindow* window, int width, int height)
 
 
 
-
-
-
-
-
-#endif // COMMONAPI_H
+//#endif // COMMONAPI_H
